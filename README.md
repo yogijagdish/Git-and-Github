@@ -94,5 +94,15 @@
   <h2 align="center"> Tagging In Git </h2>
   <dt> git tag -a tag_name -m "message" </dt>
   <dd> adds tags in the git which is used to check milestones while coding </dd>
+
+  <h2 align="center"> Stashing In Git </h2>
+  <dt> git stash </dt>
+  <dd> puts all your current changes in hold and allows you ro pull new data form other branch without pushing your code </dd>
+  <dt> git stash pop </dt>
+  <dd> pops all your stashed files after you pull the branch </dd>
+
+   <h2 align="center">   Fetching In Git </h2>
+  <dt> git fetch --all </dt>
+  <dd> fetch all the branch from git hub similar to git pull </dd>
  
   </dl>
