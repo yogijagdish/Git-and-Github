@@ -1,23 +1,23 @@
-<h1 align="center"> Git and Github </h1>
+<h1 align="center"> Docker </h1>
 
 <dl>
   
-  <h2 align="center"> Docker Version </h2>
-  <dt> docker -v </dt>
-  <dd> To See the current docker version </dd>
+  <h2> Docker Information </h2>
 
-  <h2 align="center"> Docker Information </h2>
-  <dt> docker info </dt>
-  <dd> To see the information related to client and server of the docker. <br>
-  To get the information of the server the server docker daemon should be running
-  
-   </dd>
+```bash
+# This command with give the version of the docker installed in the system
+docker -v
 
-   <dt> docker images </dt>
-  <dd> To see the images pulled in the system 
-   </dd>
+# This command will give the information about the docker
+docker info
+```
 
-   <dt>
+<h2> Docker Image List </h2>
+
+```bash
+# This command will list all the docker images
+docker images
+```
 
 <h2> Docker Container List </h2>
 
@@ -29,13 +29,6 @@ docker ps
 docker ps -a
 ```
 
-<h2> Pull Docker Images </h2>
-
-```bash
-#This command pulls the docker images from the dockerhub
-docker pull <image-name>:<tag> #here tag is optional and if no tags are provided then it takes the latest tag automatically
-```
-
 <h2> Docker Search For Images </h2>
 
 ```bash
@@ -43,6 +36,13 @@ docker pull <image-name>:<tag> #here tag is optional and if no tags are provided
 #Example docker search mysql
 docker search <image-name>
 
+```
+
+<h2> Pull Docker Images </h2>
+
+```bash
+#This command pulls the docker images from the dockerhub
+docker pull <image-name>:<tag> #here tag is optional and if no tags are provided then it takes the latest tag automatically
 ```
 
 <h2> Running Docker Images </h2>
@@ -68,6 +68,13 @@ docker run --name <custom-name> <image-name>:<tag>
 ```bash
 # This command will inspect the particular container
 docker inspect <container-id>
+```
+
+<h2> Getting logs about the container </h2>
+
+```bash
+# This command will Log the information in the container such as error message
+docker log <container-name>
 ```
 
 <h2> Execute command for the container running in the background </h2>
@@ -112,11 +119,15 @@ docker rmi <image-name>
 docker system prune
 ```
 
-<h2> Getting logs about the container </h2>
+<h2> Docker Issue in Ubuntu 22.04 latest version </h2>
+<h3> In ubuntu, there might be a issue that the docker desktop may not open. This is because ubuntu has restricted some privileges. To fix the issue we can run </h3>
 
 ```bash
-# This command will Log the information in the container such as error message
-docker log <container-name>
+# This command will change the restricted privileges
+sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
+# This command will run the docker desktop (can use the gui also)
+systemctl --user start docker-desktop
 ```
 
 </dl>
